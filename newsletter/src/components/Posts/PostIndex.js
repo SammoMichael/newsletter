@@ -23,8 +23,6 @@ class PostIndex extends Component {
     let posts;
     if (this.state.data) {
       posts = this.state.data.map((post, i)=> {
-        console.log('i' + '  ' + i.toString())
-        console.log(post.title)
         if (i < 5 && !post.title.rendered.includes('Private:')){
           return <PostItem key={post.id} {...post}/> 
         }

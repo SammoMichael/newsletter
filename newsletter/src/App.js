@@ -6,10 +6,7 @@ import {
    About,
    PostShow,
   } from './components/Index';
-import {
-  BrowserRouter as Router,
-  Route, Switch
-} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -21,13 +18,11 @@ class App extends Component {
     return (
     <div className = "container" >
       <Header /> 
-      <Router>
-        <>
-          <Route path="/about/" component={About} />
-          <Route exact path="/" component={PostIndex} />
-          <Route exact path={`/post/postId`} component={PostShow} />
-        </>
-      </Router>
+        <Switch>
+          <Route path="/about" component={About}/>
+          <Route exact path="/" component={PostIndex}/>
+          <Route path={`/posts/:postId`} component={PostShow}/>
+        </Switch>
       <Footer />
     </div>
     )

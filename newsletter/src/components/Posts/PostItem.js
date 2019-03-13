@@ -29,7 +29,7 @@ export class PostItem extends Component {
       
     return (
       < div className = "post">
-        < li className = "title" > 
+        < li className = "title" onClick={this.handleClick}> 
           {this.state.tilted ?
            <i onClick={this.handleClick} className = "fas fa-play inactive" /> :
           <i onClick={this.handleClick} className = "fas fa-play fa-rotate-90"/> }
@@ -40,7 +40,7 @@ export class PostItem extends Component {
         null : (
           <div className="post-body"><li className="date">{date}</li><div dangerouslySetInnerHTML={markup} className="excerpt"/><Link 
           className="post-links" 
-          to={`/post/${this.props.id}`} 
+          to={`/posts/${this.props.id}`} 
           key={this.props.id} >Read more</Link></div>
         )}
         <hr />

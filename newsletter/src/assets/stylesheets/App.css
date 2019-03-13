@@ -9,6 +9,18 @@
 - Accordion Triggers: 18px
 - Forms: 16px */
 /* - Content: 14px */
+p {
+    color: #333333;
+    font-weight: 500;
+    padding: 5px;
+    line-height: 30px;
+}
+
+.about-page {
+    font-size: 20px;
+    color: #333333;
+}
+
 .about {
     background-color: red;
 }
@@ -61,9 +73,11 @@ html, body {
     height: 60px;
     width: 100vw;
     margin: 0 0;
+    animation: submit-fade 4s ease-in-out 
 }
 
 .title {
+    cursor: pointer;
     padding: 10px;
     margin-left: 10px;
     font-size: 24px;
@@ -105,6 +119,7 @@ html, body {
 }
 
 .subscribe {
+    cursor: pointer;
     right: 1px;
     bottom: 1px;
     position: relative;
@@ -231,5 +246,13 @@ hr {
 
     to {
         transform: rotate(90deg);
+    }
+}
+@keyframes submit-fade {
+    from {
+        opacity: 10;
+    }
+    to {
+        opacity: 0;
     }
 }

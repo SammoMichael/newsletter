@@ -31,7 +31,7 @@ export class Footer extends Component {
         {
           this.state.submission ? < div className = "submit-alert" > < div className = "submit-site" > Thank you
           for subscribing with < a className = 'submit-link'
-          href = {this.state.value} >{this.state.value}</a>!</div ></div>: < span ></span> }
+          href = {this.state.value} >{this.state.value}</a>!</div ></div>: '' }
         <footer className="footer">
           <h1 className="call-to-action">Join our newsletter</h1>
           <form className="subscribe-form">

@@ -15,9 +15,7 @@ export class About extends Component {
   }
   render() {
     if (this.state.data) {
-      console.log(this.state.data)
       let html = this.state.data[0].content.rendered
-      console.log(html)
       var markup = {__html: html}
     }
     return (
