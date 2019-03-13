@@ -9,7 +9,18 @@
 - Accordion Triggers: 18px
 - Forms: 16px */
 /* - Content: 14px */
+.title {
+  font-size: 24px;
+}
 
+.fa-play {
+  color: #CC4B00;
+}
+
+.active {
+  transform: rotateX('90')
+  /* animation: Icon-tilt  linear; */
+}
 .spinner {
   background-image: './spinner.png'
 }
@@ -27,6 +38,11 @@
 .subscribe {
     background-color: #004EAE;
     color: white;
+}
+
+.subscribe-form {
+  height: 60px;
+  width: 60px;
 }
 
 .about-link {}
@@ -83,9 +99,13 @@ hr {
 }
 
 .spinner {
-    animation: App-logo-spin infinite 20s linear;
+    display: flex;
+    align-self: center;
+    animation: App-logo-spin infinite 3s linear;
     height: 40vmin;
     pointer-events: none;
+    height: 80px;
+    width: 80px;
 }
 
 .App-header {
@@ -110,5 +130,14 @@ hr {
 
   to {
       transform: rotate(360deg);
+  }
+}
+@keyframes Icon-tilt {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(90deg);
   }
 }
