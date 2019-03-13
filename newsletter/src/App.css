@@ -1,0 +1,114 @@
+/* Orange: #CC4B00 (Links)
+- Blue: #004EAE (Primary Branding Color)
+- Light Gray: #CCCCCC (dividers)
+- Gray: #767676 (Meta info and placeholder text)
+- Dark Gray: #333333 (Content)
+- White: #FFFFFF (Background colors) */
+/* - Top-level Heading: 36px
+- Second-level Heading: 24px
+- Accordion Triggers: 18px
+- Forms: 16px */
+/* - Content: 14px */
+
+.spinner {
+  background-image: './spinner.png'
+}
+.footer {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.input-field {
+    color: #767676;
+}
+
+.subscribe {
+    background-color: #004EAE;
+    color: white;
+}
+
+.about-link {}
+
+.call-to-action {
+    color: #767676;
+}
+
+.about-link {
+  color: #CC4B00;
+  font-size: 24px;
+}
+
+.blog-title {
+  display: flex;
+  justify-content: center;
+  color: #004EAE;
+  font-size: 36;
+}
+
+.container {
+  flex-direction: column;
+  margin: 20px;
+  justify-items: center; 
+  display: flex;
+  margin: 20px;
+}
+
+.post {
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+a {
+    color: #CC4B00;
+}
+
+hr {
+    color: #CCCCCC;
+}
+
+.App {
+    text-align: center;
+}
+
+.spinner {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
