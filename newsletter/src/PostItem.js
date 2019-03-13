@@ -4,8 +4,15 @@ import jQuery from 'jquery'
 export class PostItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = { hidden: true };
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick(e) {
+      e.preventDefault();
+      this.setState({ hidden: !(this.state.hidden) })
+    }
+
     render() {
       console.log(this.props);
       console.log(this.props.date)
@@ -39,9 +46,9 @@ export class PostItem extends Component {
     return (
       < div className = "post">
         {/* <li>this.props.id</li> */}
-        <li className = "title">{this.props.title.rendered}</li>
+        < li className = "title" > <i onClick={this.handleClick} className = "fas fa-play" > </i>{this.props.title.rendered}</li >
         <li>{date}</li>
-        <li>{replaced}</li>
+        {this.state.hidden ? null : <li>{replaced}</li>}
         <hr />
       </div>
     )
