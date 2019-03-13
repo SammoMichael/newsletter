@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/spinner.png';
-import '../App.css';
+import logo from '../../assets/images/spinner.png';
 import PostItem from './PostItem';
+import '../../assets/stylesheets/App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,13 +13,16 @@ class PostIndex extends Component {
     super(props);
     this.state = {
       data: null,
+      submission: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    alert('Thank you for subscribing with human@website.com')
+    this.setState({submission: true });
+    alert('Thank you for subscribing with human@website.com');
+    this.setTimeout(() => {this.setState({ submission: false })}, 3000);
   }
   componentDidMount() {
     fetch("https://exercise.10uplabs.com/wp-json/wp/v2/posts")
@@ -37,19 +40,11 @@ class PostIndex extends Component {
       })
     } else posts = <div>Loading</div>
     return (
-      <div className="container">
-        <h1 className="blog-title">Eats Diner</h1>
+      <>
+        { this.state.submission ? < span > Thank you
+          for subscribing with human @website.com </span> : <span></span> }
         { this.state.data ? posts : <img src={logo} className="spinner" alt="loading"></img> }
-        <footer className="footer">
-          <h1 className="call-to-action">Join our newsletter</h1>
-          <form action="post" className="subscribe-form">
-            <label htmlFor="email"></label>
-            <input type="email" id="email" className="input-field" placeholder="you@example.com"></input>
-            <input onClick={this.handleSubmit} className="subscribe" value="subscribe" type="submit"></input>
-          </form>
-          <Link to="/about" className="about-link">Read about our history</Link>        
-        </footer>
-      </div>
+      </>
     )
   }
 }

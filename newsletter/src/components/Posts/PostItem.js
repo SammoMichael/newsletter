@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import jQuery from 'jquery';
 import { Link } from 'react-router-dom';
-import '../App.css';
+import '../../assets/stylesheets/App.css'
+
 
 export class PostItem extends Component {
     constructor(props) {

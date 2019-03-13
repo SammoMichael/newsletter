@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import PostIndex from './components/PostIndex';
+import {
+   PostIndex,
+   Header,
+   Footer
+  } from './components/Index';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,9 +26,13 @@ class App extends Component {
 
   render () {
     return (
-    <Router>
-      <Route exact path="/" component={PostIndex} />
-    </Router>
+    <div className = "container" >
+      <Header /> 
+      <Router>
+        <Route exact path="/" component={PostIndex} />
+      </Router>
+      <Footer />
+    </div>
     )
   }
     // <Route path="/about" component={About} />

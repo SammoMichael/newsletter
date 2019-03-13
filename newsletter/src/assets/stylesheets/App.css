@@ -41,8 +41,7 @@
 }
 
 .subscribe-form {
-  height: 60px;
-  width: 60px;
+  
 }
 
 .about-link {}
@@ -56,19 +55,22 @@
   font-size: 24px;
 }
 
+Link {
+  text-decoration: none;
+}
 .blog-title {
   display: flex;
   justify-content: center;
   color: #004EAE;
   font-size: 36;
+  text-decoration: none;
 }
 
 .container {
   flex-direction: column;
-  margin: 20px;
+  margin: 50px 50px;
   justify-items: center; 
   display: flex;
-  margin: 20px;
 }
 
 .post {
@@ -88,6 +90,7 @@ h1 {
 
 a {
     color: #CC4B00;
+    text-decoration: none;
 }
 
 hr {
