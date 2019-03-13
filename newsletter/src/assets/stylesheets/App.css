@@ -9,21 +9,81 @@
 - Accordion Triggers: 18px
 - Forms: 16px */
 /* - Content: 14px */
+.about {
+    background-color: red;
+}
+hr {
+  margin: 20px 20px 
+}
+.post-links {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.excerpt {
+    font-size: 20px;
+    font-family: 'Raleway';
+}
+
+.date {
+    font-size: 20px;
+    color: #767676;
+    margin-top: 15px;
+}
+
+.submit-site {
+    color: white;
+}
+
+.submit-link {
+    color: white;
+    text-decoration: underline;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.submit-alert {
+    position: fixed;
+    right: .5px;
+    justify-content: center;
+    color: white;
+    font-family: 'Raleway';
+    font-size: 24;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    align-content: center;
+    background-color: #CC4B00;
+    top: 0%;
+    height: 60px;
+    width: 100vw;
+    margin: 0 0;
+}
+
 .title {
-  font-size: 24px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 24px;
 }
 
 .fa-play {
-  color: #CC4B00;
+    font-size: 16px;
+    color: #CC4B00;
+    margin: 0 15px;
+
 }
 
 .active {
-  transform: rotateX('90')
-  /* animation: Icon-tilt  linear; */
+    transform: rotateX("90");
 }
+
 .spinner {
-  background-image: './spinner.png'
+    background-image: "./spinner.png";
 }
+
 .footer {
     flex-direction: column;
     display: flex;
@@ -32,45 +92,72 @@
 }
 
 .input-field {
+    border-color: gray;
+    z-index: -1; 
+    text-align: left;
+    width: 400px;
+    height: 49px;
     color: #767676;
+    font-size: 24px; 
+}
+
+.subscribe-call {
 }
 
 .subscribe {
+    right: 1px;
+    bottom: 1px;
+    position: relative;
+    border: 1px;
+    z-index: 1;
+    width: 160px;
+    height: 56px;
     background-color: #004EAE;
     color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
 }
 
-.subscribe-form {
-  
-}
+.subscribe-form {}
 
-.about-link {}
+.about-link {
+    text-decoration: underline;
+}
 
 .call-to-action {
     color: #767676;
+    font-size: 30px;
 }
 
 .about-link {
-  color: #CC4B00;
-  font-size: 24px;
+    color: #CC4B00;
+    font-size: 24px;
 }
 
 Link {
-  text-decoration: none;
-}
-.blog-title {
-  display: flex;
-  justify-content: center;
-  color: #004EAE;
-  font-size: 36;
-  text-decoration: none;
+    text-decoration: none;
 }
 
+.blog-title {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #004EAE;
+    font-size: 50px;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+.post-body {
+  margin-left: 40px;
+}
 .container {
-  flex-direction: column;
-  margin: 50px 50px;
-  justify-items: center; 
-  display: flex;
+    font-family: 'Raleway';
+    flex-direction: column;
+    margin: 10px 70px;
+    justify-items: center;
+    display: flex;
 }
 
 .post {
@@ -94,6 +181,7 @@ a {
 }
 
 hr {
+    margin-left: 35px;
     color: #CCCCCC;
 }
 
@@ -112,35 +200,36 @@ hr {
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-      transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-      transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
-@keyframes Icon-tilt {
-  from {
-      transform: rotate(0deg);
-  }
 
-  to {
-      transform: rotate(90deg);
-  }
+@keyframes Icon-tilt {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
 }

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import jQuery from 'jquery';
 import { Link } from 'react-router-dom';
-import '../../assets/stylesheets/App.css'
-
 
 export class PostItem extends Component {
     constructor(props) {
@@ -20,26 +17,16 @@ export class PostItem extends Component {
     }
 
     render() {
-      console.log(this.props);
-      console.log(this.props.date)
-      let date = new Date(this.props.date)
+      let date = new Date(this.props.date);
       date = date.toDateString();
-      date = date.slice(3)
-      window.object = this.props
-      window.props = jQuery.parseHTML(this.props.excerpt.rendered) 
-      let replaced = jQuery.parseHTML(this.props.excerpt.rendered)
-      replaced = replaced[0].innerText
-      window.replaced = replaced;
-      var encodedStr = replaced;
-      var parser = new DOMParser();
-      var dom = parser.parseFromString(
-        '<!doctype html><body>' + encodedStr,
-        'text/html');
-      var decodedString = dom.body.textContent;
-
-      console.log(decodedString);
-      var decoded = decodedString.replace('&#038', '&amp;', '');
-      replaced = decoded.slice(0, -3);
+      date = date.slice(3);
+      window.object = this.props;
+      if (this.props) {
+        let html = this.props.excerpt.rendered;
+        // html = html.replace(/[…]/, '');
+        var markup = {__html: html}
+      }
+      
     return (
       < div className = "post">
         < li className = "title" > 
@@ -51,7 +38,10 @@ export class PostItem extends Component {
         </li >
         {this.state.hidden ?
         null : (
-          <><li>{date}</li><li>{replaced}</li><Link to=""></Link></>
+          <div className="post-body"><li className="date">{date}</li><div dangerouslySetInnerHTML={markup} className="excerpt"/><Link 
+          className="post-links" 
+          to={`/post/${this.props.id}`} 
+          key={this.props.id} >Read more</Link></div>
         )}
         <hr />
       </div>
