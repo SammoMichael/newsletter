@@ -20,7 +20,7 @@ class PostIndex extends Component {
     }
 
   render () {
-    if (this.state.data) {
+    if (this.state.data) { // convert post to markup for render
       var postIndex = parseInt(this.props.match.params.postId);
       var post = this.state.data.filter(el => el.id === postIndex);
       let html = post[0].content.rendered;
@@ -29,7 +29,9 @@ class PostIndex extends Component {
     return (
       <div>
         <hr/>
-         { this.state.data ? <div className="post-show" dangerouslySetInnerHTML={markup}></div> : <img src={logo} className="spinner" alt="loading"></img> }
+         { this.state.data ? // ternary for loading spinner or single post
+           <div className="post-show" dangerouslySetInnerHTML={markup}></div> :
+            <img src={logo} className="spinner" alt="loading"></img> }
       </div>
     )
   }

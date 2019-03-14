@@ -15,23 +15,17 @@ export class Footer extends Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.value !== '') {
-      this.setState({
-        submission: true
-      });
-      setTimeout(() => {
-        this.setState({
-          submission: false
-        })
-      }, 3000);
+      this.setState({ submission: true });
+      setTimeout(() => { this.setState({submission: false})}, 3000);
     }
   }
   render() {
     return (
       <>
         {
-          this.state.submission ? < div className = "submit-alert" > < div className = "submit-site" > Thank you
-          for subscribing with < a className = 'submit-link'
-          href = {this.state.value} >{this.state.value}</a>!</div ></div>: '' }
+          this.state.submission ?
+           < div className = "submit-alert" ><div className = "submit-site" > Thank you
+          for subscribing with < a className = 'submit-link' href = {this.state.value} >{this.state.value}</a>!</div ></div>: '' }
         <footer className="footer">
           <h1 className="call-to-action">Join our newsletter</h1>
           <form className="subscribe-form">

@@ -7,11 +7,9 @@ export class PostItem extends Component {
       this.state = { hidden: true, tilted: true };
       this.handleClick = this.handleClick.bind(this);
     }
-
-    handleClick(e) {
-      e.preventDefault();
+    handleClick() {
       this.setState({
-        hidden: !(this.state.hidden),
+        hidden: !(this.state.hidden), // toggle internal state of accordion and rotating icons
         tilted: !(this.state.tilted)    
       })
     }
@@ -30,18 +28,18 @@ export class PostItem extends Component {
       < div className = "post">
         < li className = "title" onClick={this.handleClick}> 
           {this.state.tilted ?
-           <i onClick={this.handleClick} className = "fas fa-play inactive" /> :
+           <i onClick={this.handleClick} className = "fas fa-play inactive" /> :  // ternary for icon animation
           <i onClick={this.handleClick} className = "fas fa-play active"/> }
-          
           {this.props.title.rendered}
         </li >
-        {this.state.hidden ?
+        {this.state.hidden ? // ternary for dynamic accordion action of excerpts
         null : (
           <div className="post-body"><li className="date">{date}</li><div dangerouslySetInnerHTML={markup} className="excerpt"/><Link 
-          className="post-links" 
-          to={`/posts/${this.props.id}`} 
-          key={this.props.id} >Read more</Link></div>
-        )}
+            className="post-links" 
+            to={`/posts/${this.props.id}`} 
+            key={this.props.id} >Read more</Link>
+          </div>
+          )}
         <hr />
       </div>
     )

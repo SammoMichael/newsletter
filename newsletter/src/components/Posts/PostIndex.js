@@ -24,7 +24,7 @@ class PostIndex extends Component {
     if (this.state.data) {
        // eslint-disable-next-line
       posts = this.state.data.map((post, i)=> {
-        // if (i < 5 && !post.title.rendered.includes('Private:')){
+        // if (i < 5 ){   // Optional throttle for post count
           return <PostItem key={post.id} {...post}/> 
         // }
       })
