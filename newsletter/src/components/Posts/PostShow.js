@@ -10,6 +10,7 @@ class PostIndex extends Component {
   }
   
   componentDidMount() {
+     // eslint-disable-next-line
     var markup = '';
     fetch("https://exercise.10uplabs.com/wp-json/wp/v2/posts")
       .then(response => response.json())
@@ -22,10 +23,8 @@ class PostIndex extends Component {
     if (this.state.data) {
       var postIndex = parseInt(this.props.match.params.postId);
       var post = this.state.data.filter(el => el.id === postIndex);
-      debugger;
       let html = post[0].content.rendered;
       var markup = {__html: html};
-      debugger;
     } 
     return (
       <div>

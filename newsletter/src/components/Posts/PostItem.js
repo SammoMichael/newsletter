@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 export class PostItem extends Component {
     constructor(props) {
-        super(props);
-        this.state = { hidden: true, tilted: true };
-        this.handleClick = this.handleClick.bind(this);
+      super(props);
+      this.state = { hidden: true, tilted: true };
+      this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
       e.preventDefault();
       this.setState({
-         hidden: !(this.state.hidden),
+        hidden: !(this.state.hidden),
         tilted: !(this.state.tilted)    
       })
     }
@@ -23,7 +23,6 @@ export class PostItem extends Component {
       window.object = this.props;
       if (this.props) {
         let html = this.props.excerpt.rendered;
-        // html = html.replace(/[…]/, '');
         var markup = {__html: html}
       }
       
@@ -32,7 +31,7 @@ export class PostItem extends Component {
         < li className = "title" onClick={this.handleClick}> 
           {this.state.tilted ?
            <i onClick={this.handleClick} className = "fas fa-play inactive" /> :
-          <i onClick={this.handleClick} className = "fas fa-play fa-rotate-90"/> }
+          <i onClick={this.handleClick} className = "fas fa-play active"/> }
           
           {this.props.title.rendered}
         </li >

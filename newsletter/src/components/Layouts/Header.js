@@ -5,7 +5,7 @@ export class Header extends Component {
   render() {
     return (
       <>
-        <Link to="/"><h1 className = "blog-title" > Eats Diner </h1></Link>
+        <Link className="home-link" to="/"><h1 className = "blog-title" > Eats Diner </h1></Link>
       </>
     )
   }

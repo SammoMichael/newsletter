@@ -22,10 +22,11 @@ class PostIndex extends Component {
   render () {
     let posts;
     if (this.state.data) {
+       // eslint-disable-next-line
       posts = this.state.data.map((post, i)=> {
-        if (i < 5 && !post.title.rendered.includes('Private:')){
+        // if (i < 5 && !post.title.rendered.includes('Private:')){
           return <PostItem key={post.id} {...post}/> 
-        }
+        // }
       })
     } else posts = <div>Loading</div>
     return (
